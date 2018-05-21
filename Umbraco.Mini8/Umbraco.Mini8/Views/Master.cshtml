@@ -1,0 +1,210 @@
+﻿@using Our.Umbraco.Ditto
+@using v8umbracodesign.data.Models
+@inherits UmbracoTemplatePage
+@{
+    Layout = null;
+    Site site = Model.Content.Site().As<Site>();
+    string headerClass = string.Empty;
+    bool showLanding = false;
+
+    if (Model.Content.DocumentTypeAlias == Home.ModelTypeAlias)
+    {
+        headerClass = "reveal alt";
+        showLanding = true;
+    }
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="/scripts/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="/css/main.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>@Model.Content.Name - @site.SiteName</title>
+    <meta name="description" content="@Model.Content.GetProperty("")">
+    @RenderSection("Header", required: false)
+</head>
+<body class="@showLanding ?? landing">
+    <div id="page-wrapper">
+        <header id="header" class="@headerClass">
+            <h1>
+                <a class="@Html.Raw(Model.Content.Id == site.Id ? "active" : "")" href="@site.Url">@site.SiteName</a>
+            </h1>
+            @Html.Partial("~/views/partials/navigation/topNavigation.cshtml")
+        </header>
+        @RenderBody()
+        <!-- One -->
+        <div class="wrapper style1">
+            <section class="container">
+                <header class="major">                    
+                    <a id="page-title"></a>
+                    <h2>Features</h2>
+                    <p>
+                        Why you want to choose v8?
+                    </p>
+                </header>
+                <div class="row uniform">
+                    <div class="4u 12u(narrower)">
+                        <section class="box special">
+                            <i class="icon major fa-user"></i>
+                            <h3>Variants</h3>
+                            <p>Umbraco v8 supports 1:1 multilingual</p>
+                        </section>
+                    </div>
+                    <div class="4u 12u(narrower)">
+                        <section class="box special">
+                            <i class="icon major fa-tint"></i>
+                            <h3>Infinite Editing</h3>
+                            <p>Streamlined back-office editing experience</p>
+                        </section>
+                    </div>
+                    <div class="4u 12u(narrower)">
+                        <section class="box special">
+                            <i class="icon major fa-cog"></i>
+                            <h3>NuCache</h3>
+                            <p>Efficient and powerful in-memory content cache</p>
+                        </section>
+                    </div>
+                </div>
+                <div class="row uniform">
+                    <div class="6u 12u(narrower)">
+                        <section class="box special">
+                            <i class="icon major fa-user"></i>
+                            <h3>Code Cleanup</h3>
+                            <p>Updated and cleaned up Umbraco core codebase</p>
+                        </section>
+                    </div>
+                    <div class="6u 12u(narrower)">
+                        <section class="box special">
+                            <i class="icon major fa-tint"></i>
+                            <h3>Content Apps</h3>
+                            <p>Turbo charged back-office extensibility</p>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Two -->
+        <div class="wrapper style2">
+            <section class="container 75%">
+                <header class="major">
+                    <h2>Getting Started</h2>
+                    <p>You'll be surprised how smoothly this will go...</p>
+                </header>
+                <div class="row uniform">
+                    <div class="6u 12u(narrower)">
+                        <section class="box special">
+                            <i class="icon major alt fa-bar-chart"></i>
+                            <h3>Lift and Shift</h3>
+                            <p>
+                                While there is no exact upgrade path to version 8, its easy to migrate
+                                across your templates and data
+                            </p>
+                        </section>
+                    </div>
+                    <div class="6u 12u(narrower)">
+                        <section class="box special">
+                            <i class="icon major alt fa-cog"></i>
+                            <h3>Nuget support</h3>
+                            <p>
+                                Keeping up-to-date with 8 will be as easy as Update-Package
+                            </p>
+                        </section>
+                    </div>
+                </div>
+                <div class="row uniform">
+                    <div class="6u 12u(narrower)">
+                        <section class="box special">
+                            <i class="icon major alt fa-desktop"></i>
+                            <h3>Umbraco Cloud</h3>
+                            <p>
+                                If you use Cloud for your version 8 build, all updates will be managed by
+                                our dedicated Umbraco cloud team
+                            </p>
+                        </section>
+                    </div>
+                    <div class="6u 12u(narrower)">
+                        <section class="box special">
+                            <i class="icon major alt fa-check"></i>
+                            <h3>Community</h3>
+                            <p>
+                                You couldn't ask for a friendlier bunch to help you out if you hit a wall.
+                            </p>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Three -->
+        <div class="wrapper style3">
+            <section class="container">
+                <header class="major">
+                    <h2>Sed Faucibus</h2>
+                </header>
+                <div class="row">
+                    <div class="4u 12u(narrower)">
+                        <section class="special">
+                            <a href="#" class="image fit"><img src="/images/pic01.jpg" alt="" /></a>
+                            <h3>Etiam Interdum</h3>
+                            <p>
+                                Praesent dapibus, neque id cursus tortor magna etiam lorem
+                                neque egestas sed magna tempus.
+                            </p>
+                            <ul class="actions">
+                                <li><a href="#" class="button alt">Learn More</a></li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="4u 12u(narrower)">
+                        <section class="special">
+                            <a href="#" class="image fit"><img src="/images/pic02.jpg" alt="" /></a>
+                            <h3>Varius Faucibus</h3>
+                            <p>
+                                Praesent dapibus, neque id cursus tortor magna etiam lorem
+                                neque egestas sed magna tempus.
+                            </p>
+                            <ul class="actions">
+                                <li><a href="#" class="button alt">Learn More</a></li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="4u 12u(narrower)">
+                        <section class="special">
+                            <a href="#" class="image fit"><img src="/images/pic03.jpg" alt="" /></a>
+                            <h3>Ante Praesent</h3>
+                            <p>
+                                Praesent dapibus, neque id cursus tortor magna etiam lorem
+                                neque egestas sed magna tempus.
+                            </p>
+                            <ul class="actions">
+                                <li><a href="#" class="button alt">Learn More</a></li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="menu">
+                <li><a href="/privacy-policy">Privacy Policy</a></li>
+                <li><a href="http://umbraco.com">Umbraco.com</a></li>
+            </ul>
+            <div class="copyright">
+                &copy; Umbraco.com. All rights reserved.
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/scripts/jquery.min.js"></script>
+    <script src="/scripts/jquery.dropotron.min.js"></script>
+    <script src="/scripts/jquery.scrollgress.min.js"></script>
+    <script src="/scripts/skel.min.js"></script>
+    <script src="/scripts/util.js"></script>
+    <!--[if lte IE 8]><script src="/scripts/ie/respond.min.js"></script><![endif]-->
+    <script src="/scripts/main.js"></script>
+</body>
+</html>

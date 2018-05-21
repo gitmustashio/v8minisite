@@ -1,7 +1,12 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+﻿@inherits UmbracoTemplatePage<v8umbracodesign.data.Models.ContentPage>
 @{
-	Layout = null;
+    Layout = "Master.cshtml";
 }
-
-@* the fun starts here *@
-
+<div class="wrapper style1">
+    <section id="main" class="container">
+        @Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+        <section id="content" class="box">
+            @Html.Raw(Model.Content.BodyText)
+        </section>
+    </section>
+</div>
