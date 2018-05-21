@@ -360,3 +360,6 @@ ASALocalRun/
 
 # Ignore the Models Builder models out of date flag
 **/App_Data/Models/ood.flag
+Umbraco.Mini8/Umbraco.Mini8/config/ClientDependency.config
+Umbraco.Mini8/Umbraco.Mini8/App_Data/NuCache.*
+Umbraco.Mini8/Umbraco.Mini8/App_Data/Models/
