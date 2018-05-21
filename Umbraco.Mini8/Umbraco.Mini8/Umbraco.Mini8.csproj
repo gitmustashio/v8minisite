@@ -375,6 +375,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="500.html" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
@@ -397,6 +398,7 @@
     <Content Include="config\Lang\ru-RU.user.xml" />
     <Content Include="config\Lang\sv-SE.user.xml" />
     <Content Include="config\Lang\zh-CN.user.xml" />
+    <Content Include="css\easteregg.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\ie8.css" />
     <Content Include="css\images\banner.svg" />
@@ -407,6 +409,7 @@
     <Content Include="default.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
+    <Content Include="images\banaan.gif" />
     <Content Include="images\pic01.jpg" />
     <Content Include="images\pic02.jpg" />
     <Content Include="images\pic03.jpg" />
@@ -414,18 +417,32 @@
     <Content Include="images\pic05.jpg" />
     <Content Include="images\pic06.jpg" />
     <Content Include="images\preslogo.png" />
+    <Content Include="images\raptor-sound.mp3" />
+    <Content Include="images\raptor.jpg" />
+    <Content Include="images\raptor2.jpg" />
+    <Content Include="images\raptor3.jpg" />
+    <Content Include="images\trombone.mp3" />
+    <Content Include="images\unicorn.gif" />
+    <Content Include="raptor-sound.mp3" />
+    <Content Include="raptor.jpg" />
+    <Content Include="raptor.png" />
+    <Content Include="scripts\easteregg.js" />
     <Content Include="scripts\ie\html5shiv.js" />
     <Content Include="scripts\ie\PIE.htc" />
     <Content Include="scripts\ie\respond.min.js" />
+    <Content Include="scripts\jquery-1.4.1.min.js" />
     <Content Include="scripts\jquery.dropotron.min.js" />
     <Content Include="scripts\jquery.min.js" />
+    <Content Include="scripts\jquery.raptorize.1.0.js" />
     <Content Include="scripts\jquery.scrollgress.min.js" />
     <Content Include="scripts\main.js" />
+    <Content Include="scripts\raptorize.js" />
     <Content Include="scripts\skel.min.js" />
     <Content Include="scripts\util.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\EastereggController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -456,6 +473,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="images\raptor-sound.ogg" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
@@ -480,6 +498,8 @@
     <Content Include="Views\Partials\Navigation\SubNavigation.cshtml" />
     <Content Include="Views\Partials\Navigation\TopNavigation.cshtml" />
     <Content Include="Views\Partials\SectionHeader.cshtml" />
+    <Content Include="Views\Master.cshtml" />
+    <Content Include="raptor-sound.ogg" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

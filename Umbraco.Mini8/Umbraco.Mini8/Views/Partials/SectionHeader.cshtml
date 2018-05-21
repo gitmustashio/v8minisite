@@ -1,12 +1,9 @@
-﻿@using Our.Umbraco.Ditto
-@using v8umbracodesign.data.Models
+﻿@using ContentModels = Umbraco.Web.PublishedModels;
 @inherits UmbracoViewPage<IPublishedContent>
-@{
-    var contentBase = Model.As<ContentPageBase>();
-}
+
 <header class="major">
-    <h2>@contentBase.PageTitle</h2>
+    <h2>@Model.PageTitle</h2>
     <p>
-        @contentBase.SummaryText
+        @Model.SummaryText
     </p>
 </header>

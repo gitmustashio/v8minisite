@@ -1,18 +1,17 @@
-﻿@inherits UmbracoTemplatePage
+﻿@inherits UmbracoViewPage
 @using Umbraco.Web;
 @{
-    var site = Model.Content.Site();
-    var selection = site.Children.Where(x => x.IsVisible());
+//var selection = Model.Children.Where(x => x.IsVisible());
 }
 
 <nav id="nav">
     <ul>
-        @foreach (var item in selection)
+        @*@foreach (var item in selection)
         {
             <li>
                 <a class="icon fa-angle-down @(item.IsAncestorOrSelf(Model.Content) ? "active" : null)" 
                    href="@item.Url">@item.Name</a>
             </li>
-        }
+        }*@
     </ul>
 </nav>

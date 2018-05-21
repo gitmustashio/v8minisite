@@ -363,3 +363,4 @@ ASALocalRun/
 Umbraco.Mini8/Umbraco.Mini8/config/ClientDependency.config
 Umbraco.Mini8/Umbraco.Mini8/App_Data/NuCache.*
 Umbraco.Mini8/Umbraco.Mini8/App_Data/Models/
+Umbraco.Mini8/Umbraco.Mini8/Models/Generated/models.err

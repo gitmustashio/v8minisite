@@ -1,13 +1,12 @@
-﻿@using Our.Umbraco.Ditto
-@using v8umbracodesign.data.Models
-@inherits UmbracoTemplatePage
+﻿@using ContentModels = Umbraco.Web.PublishedModels;
+
+@inherits UmbracoViewPage
 @{
     Layout = null;
-    Site site = Model.Content.Site().As<Site>();
     string headerClass = string.Empty;
     bool showLanding = false;
 
-    if (Model.Content.DocumentTypeAlias == Home.ModelTypeAlias)
+    if (Model.ContentType?.Alias == ContentModels.Site.ModelTypeAlias)
     {
         headerClass = "reveal alt";
         showLanding = true;
@@ -22,15 +21,17 @@
     <link rel="stylesheet" href="/css/main.css" />
     <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie8.css" /><![endif]-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>@Model.Content.Name - @site.SiteName</title>
-    <meta name="description" content="@Model.Content.GetProperty("")">
+    <title>@Model.Name - @(Model.Value<string>("siteName"))</title>
+    <meta name="description" content="@(Model.Value<string>("metaDescription"))">
     @RenderSection("Header", required: false)
 </head>
 <body class="@showLanding ?? landing">
     <div id="page-wrapper">
         <header id="header" class="@headerClass">
             <h1>
-                <a class="@Html.Raw(Model.Content.Id == site.Id ? "active" : "")" href="@site.Url">@site.SiteName</a>
+                <a class="@Html.Raw(Model.Id == Model.Root()?.Id ? " active" : "")" href="@Model.Root().Url">
+                    @Model.Root().Name
+                </a>
             </h1>
             @Html.Partial("~/views/partials/navigation/topNavigation.cshtml")
         </header>
@@ -38,7 +39,7 @@
         <!-- One -->
         <div class="wrapper style1">
             <section class="container">
-                <header class="major">                    
+                <header class="major">
                     <a id="page-title"></a>
                     <h2>Features</h2>
                     <p>

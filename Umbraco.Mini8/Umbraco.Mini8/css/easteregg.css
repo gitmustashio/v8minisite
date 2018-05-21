@@ -1,0 +1,130 @@
+﻿.unicorn__item {
+    display: block;
+    position: fixed;
+    background: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 18;
+    opacity: 1;
+}
+
+.unicorn__image {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    top: calc(50% - 250px);
+    left: calc(50% - 250px);
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-animation-name: floating;
+    animation-name: floating;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.banana__item {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    right: 4rem;
+    z-index: 18;
+    opacity: 1
+}
+
+.banana__image {
+    width: 24rem;
+    height: 24rem
+}
+
+.rotate {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-transition: 1s ease-in-out all;
+    transition: 1s ease-in-out all
+}
+
+.flip {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -webkit-transition: 1s ease-in-out all;
+    transition: 1s ease-in-out all
+}
+
+.comic-sans * {
+    font-family: "Comic Sans MS", cursive, sans-serif !important
+}
+
+.black-white * {
+    color: #000 !important;
+    background: #FFF !important;
+    border-color: #000
+}
+
+.black-white img, .black-white svg, .black-white svg * {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    background: transparent !important
+}
+
+.black-white :after, .black-white :before {
+    content: none !important
+}
+
+.drunk img {
+    -webkit-filter: blur(3px);
+    filter: blur(3px)
+}
+
+#elRaptor {
+    max-width: none;
+    width: auto;
+    z-index: 1001
+}
+
+@-webkit-keyframes floating {
+    0% {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%)
+    }
+
+    25% {
+        -webkit-transform: translateX(6rem);
+        transform: translateX(6rem)
+    }
+
+    75% {
+        -webkit-transform: translateX(-6rem);
+        transform: translateX(-6rem)
+    }
+
+    to {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%)
+    }
+}
+
+@keyframes floating {
+    0% {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%)
+    }
+
+    25% {
+        -webkit-transform: translateX(6rem);
+        transform: translateX(6rem)
+    }
+
+    75% {
+        -webkit-transform: translateX(-6rem);
+        transform: translateX(-6rem)
+    }
+
+    to {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%)
+    }
+}

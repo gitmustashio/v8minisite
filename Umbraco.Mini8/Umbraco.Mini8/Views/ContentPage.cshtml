@@ -1,4 +1,5 @@
-﻿@inherits UmbracoTemplatePage<v8umbracodesign.data.Models.ContentPage>
+﻿@inherits UmbracoViewPage<ContentModels.ContentPage>
+@using ContentModels = Umbraco.Web.PublishedModels;
 @{
     Layout = "Master.cshtml";
 }
@@ -6,7 +7,7 @@
     <section id="main" class="container">
         @Html.Partial("~/Views/Partials/SectionHeader.cshtml")
         <section id="content" class="box">
-            @Html.Raw(Model.Content.BodyText)
+            @Html.Raw(Model.BodyText)
         </section>
     </section>
 </div>

@@ -1,0 +1,8 @@
+(function($){$.fn.raptorize=function(options){var defaults={enterOn:'click',delayTime:5000};var options=$.extend(defaults,options);return this.each(function(){var _this=$(this);var raptorImageMarkup='<img id="elRaptor" style="display: none" src="raptor.png" />'
+var raptorAudioMarkup='<audio id="elRaptorShriek" preload="auto"><source src="raptor-sound.mp3" /><source src="raptor-sound.ogg" /></audio>';var locked=false;var audioSupported=typeof $(raptorAudioMarkup)[0].canPlayType!=='undefined'?true:false;$('section[role="main"]').append(raptorImageMarkup);if(audioSupported){$('section[role="main"]').append(raptorAudioMarkup);}
+var raptor=$('#elRaptor').css({"position":"fixed","bottom":"-700px","right":"0","display":"block"})
+function init(){locked=true;if(audioSupported){function playSound(){document.getElementById('elRaptorShriek').play();}
+playSound();}
+raptor.animate({"bottom":"0"},function(){$(this).animate({"bottom":"-130px"},100,function(){var offset=(($(this).position().left)+400);$(this).delay(300).animate({"right":offset},2200,function(){raptor=$('#elRaptor').css({"bottom":"-700px","right":"0"})
+locked=false;})});});}
+if(options.enterOn=='timer'){setTimeout(init,options.delayTime);}else if(options.enterOn=='click'){_this.bind('click',function(e){e.preventDefault();if(!locked){init();}})}else if(options.enterOn=='konami-code'){var kkeys=[],konami="38,38,40,40,37,39,37,39,66,65";$(document).keydown(function(e){kkeys.push(e.keyCode);if(kkeys.toString().indexOf(konami)>=0){$(document).unbind('keydown',arguments.callee);init();}});}});}})(jQuery);
