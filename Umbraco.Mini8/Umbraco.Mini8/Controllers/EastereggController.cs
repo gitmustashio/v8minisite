@@ -28,7 +28,7 @@ namespace Umbraco.Mini8.Controllers
                     html = "<script>$(function() { $('body').addClass('flip');});</script>";
                     break;
                 case "clear":
-                    html = "<script>$(function() {$(function() { $('.easteregg').remove(); }); });</script>";
+                    html = "<script>$(function() {$(function() { $('body').removeClass(); $('body').addClass('landing'); $('.easteregg').remove(); }); });</script>";
                     break;
                 case "banana":
                     html = "<script>$(function() {$('body').append(\"<div class='banana easteregg'> <div class='banana__item'> <div class='banana__image'><img src='/images/banaan.png'></div> </div> </div>\"); });</script>";
