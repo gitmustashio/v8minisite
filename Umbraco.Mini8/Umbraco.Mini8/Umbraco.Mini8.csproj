@@ -409,7 +409,7 @@
     <Content Include="default.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
-    <Content Include="images\banaan.gif" />
+    <Content Include="images\banaan.png" />
     <Content Include="images\pic01.jpg" />
     <Content Include="images\pic02.jpg" />
     <Content Include="images\pic03.jpg" />
