@@ -1,5 +1,17 @@
-# Setup
-## Umbraco version 8 mini-site
+# Umbraco version 8 mini-site
+
+## Summary
+
+This is a single page application (currently) built using the latest and greatest Umbraco version 8, installed via nuget.
+
+## Architecture
+
+- Umbraco is installed using Nuget
+- There is only one project - the web application itself
+- The database needs to be installed separately
+- ModelsBuilder is used in PureLive mode
+
+## Setup
 
 1) Ensure you have installed version 4.7.2 of the .NET framework 
 2) Open in Visual Studio 2017. NB this needs to be version 15.7.2 or above at time of writing, if not update via the Visual Studio Installer
