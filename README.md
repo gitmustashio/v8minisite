@@ -9,3 +9,12 @@ Umbraco version 8 mini-site
 6) Run via IIS Express or create a new website in IIS, depending on preferences
 7) Login to Umbraco (contact repo owner or reset password using email with required SMTP settings)
 8) There is a Trello board of items to complete (contact repo owner for access)
+
+# Current Known Issues
+
+The first time you run the site, the models are built using "PureLive" mode, and placed in App_Data/Models folder. Often there is a models.err file appears on first run. If this happens, currently:
+
+- Delete this file
+- Tap the web.config
+- Refresh the site
+- Your models should reappear and you can run as expected
