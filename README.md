@@ -1,5 +1,5 @@
-# v8minisite
-Umbraco version 8 mini-site
+# Setup
+## Umbraco version 8 mini-site
 
 1) Ensure you have installed version 4.7.2 of the .NET framework 
 2) Open in Visual Studio 2017. NB this needs to be version 15.7.2 or above at time of writing, if not update via the Visual Studio Installer
@@ -10,7 +10,7 @@ Umbraco version 8 mini-site
 7) Login to Umbraco (contact repo owner or reset password using email with required SMTP settings)
 8) There is a Trello board of items to complete (contact repo owner for access)
 
-# Current Known Issues
+## Current Known Issues
 
 The first time you run the site, the models are built using "PureLive" mode, and placed in App_Data/Models folder. Often there is a models.err file appears on first run. If this happens, currently:
 
