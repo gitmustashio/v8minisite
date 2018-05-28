@@ -10,6 +10,7 @@ This is a single page application (currently) built using the latest and greates
 - There is only one project - the web application itself
 - The database needs to be installed separately
 - ModelsBuilder is used in PureLive mode
+- The hostname is setup by default to "http://umbracomini8.local", this can be changed in the Culture & Hostnames dialog if required
 
 ## Setup
 
