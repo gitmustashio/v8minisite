@@ -33,7 +33,6 @@
         <div class="row">
             @foreach (var sectionItem in Model.GettingStartedSection)
             {
-                var itemLink = sectionItem?.ItemLink;
                 <div class="4u 12u(narrower)">
                     <section class="special">
                         <a href="#" class="image fit"><img src="@sectionItem.ItemImage.Url" alt="@sectionItem.ItemTitle" /></a>
