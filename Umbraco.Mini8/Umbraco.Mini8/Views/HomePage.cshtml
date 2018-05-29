@@ -7,13 +7,13 @@
 
 <section id="banner">
     @*@if (Model.SiteLogo != null && !string.IsNullOrEmpty(Model.SiteLogo.Url))
-    {
-        <img src="@Model.SiteLogo.GetCropUrl("Logo")" alt="@Model.SiteName">
-    }
-    else
-    {
-        <a title="@Model.SiteName" href="/">@Model.SiteName</a>
-    }*@
+        {
+            <img src="@Model.SiteLogo.GetCropUrl("Logo")" alt="@Model.SiteName">
+        }
+        else
+        {
+            <a title="@Model.SiteName" href="/">@Model.SiteName</a>
+        }*@
     <img src="/images/preslogo.png?anchor=center&amp;mode=crop&amp;width=200&amp;height=227&amp;rnd=131713710430000000" alt="Umbraco Version 8">
     <h2>@Model.SiteName</h2>
     <p>@Model.SiteDescription</p>
@@ -21,3 +21,32 @@
         <li><a href="#page-title" class="button">@Model.SiteActionButtonTitle</a></li>
     </ul>
 </section>
+
+@Html.Partial("~/Views/Partials/Features.cshtml")
+@Html.Partial("~/Views/Partials/FAQs.cshtml")
+
+<div class="wrapper style3">
+    <section class="container">
+        <header class="major">
+            <h2>@Model.GettingStartedTitle</h2>
+        </header>
+        <div class="row">
+            @foreach (var sectionItem in Model.GettingStartedSection)
+            {
+                var itemLink = sectionItem?.ItemLink;
+                <div class="4u 12u(narrower)">
+                    <section class="special">
+                        <a href="#" class="image fit"><img src="@sectionItem.ItemImage.Url" alt="@sectionItem.ItemTitle" /></a>
+                        <h3>@sectionItem.ItemTitle</h3>
+                        <p>
+                            @sectionItem.ItemSummary
+                        </p>
+                        <ul class="actions">
+                            <li><a href="" title="@sectionItem.ItemTitle" class="button alt">@sectionItem.ItemTitle</a></li>
+                        </ul>
+                    </section>
+                </div>
+            }
+        </div>
+    </section>
+</div>

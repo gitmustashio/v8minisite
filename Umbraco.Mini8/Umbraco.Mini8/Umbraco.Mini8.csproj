@@ -439,7 +439,9 @@
     <Content Include="scripts\raptorize.js" />
     <Content Include="scripts\skel.min.js" />
     <Content Include="scripts\util.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\EastereggController.cs" />
@@ -501,6 +503,7 @@
     <Content Include="Views\Master.cshtml" />
     <Content Include="raptor-sound.ogg" />
     <Content Include="Views\Partials\Features.cshtml" />
+    <Content Include="Views\Partials\FAQs.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
