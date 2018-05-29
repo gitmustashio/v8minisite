@@ -1,0 +1,46 @@
+﻿@using ContentModels = Umbraco.Web.PublishedModels;
+@inherits UmbracoViewPage<IPublishedContent>
+
+@{
+    var siteRoot = Model.Root() as ContentModels.Site;
+    var features = siteRoot.FeaturesRepository as ContentModels.FeatureList;
+}
+
+
+<div class="wrapper style1">
+    <section class="container">
+        <header class="major">
+            <a id="page-title"></a>
+            <h2>@siteRoot.FeaturesRepository.Name</h2>
+            <p>
+                @features.Summary
+            </p>
+        </header>
+        <div class="row uniform">
+            @foreach (var feature in features.Children.Take(3))
+            {
+                var featureTyped = feature as FeatureItem;
+                <div class="4u 12u(narrower)">
+                    <section class="box special">
+                        <i class="icon major @featureTyped.FeatureIcon"></i>
+                        <h3>@feature.Name</h3>
+                        <p>@featureTyped.FeatureSummary</p>
+                    </section>
+                </div>
+            }
+        </div>
+        <div class="row uniform">
+            @foreach (var feature in features.Children.Skip(3).Take(3))
+            {
+                var featureTyped = feature as FeatureItem;
+                <div class="6u 12u(narrower)">
+                    <section class="box special">
+                        <i class="icon major @featureTyped.FeatureIcon"></i>
+                        <h3>@feature.Name</h3>
+                        <p>@featureTyped.FeatureSummary</p>
+                    </section>
+                </div>
+            }
+        </div>
+    </section>
+</div>

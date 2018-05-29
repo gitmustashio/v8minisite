@@ -33,60 +33,10 @@
                     @Model.Root().Name
                 </a>
             </h1>
-            @Html.Partial("~/views/partials/navigation/topNavigation.cshtml")
+            @Html.Partial("~/Views/Partials/Navigation/TopNavigation.cshtml")
         </header>
         @RenderBody()
-        <!-- One -->
-        <div class="wrapper style1">
-            <section class="container">
-                <header class="major">
-                    <a id="page-title"></a>
-                    <h2>Features</h2>
-                    <p>
-                        Why you want to choose v8?
-                    </p>
-                </header>
-                <div class="row uniform">
-                    <div class="4u 12u(narrower)">
-                        <section class="box special">
-                            <i class="icon major fa-flag"></i>
-                            <h3>Variants</h3>
-                            <p>Umbraco v8 supports 1:1 multilingual</p>
-                        </section>
-                    </div>
-                    <div class="4u 12u(narrower)">
-                        <section class="box special">
-                            <i class="icon major fa-tint"></i>
-                            <h3>Infinite Editing</h3>
-                            <p>Streamlined back-office editing experience</p>
-                        </section>
-                    </div>
-                    <div class="4u 12u(narrower)">
-                        <section class="box special">
-                            <i class="icon major fa-cog"></i>
-                            <h3>NuCache</h3>
-                            <p>Efficient and powerful in-memory content cache</p>
-                        </section>
-                    </div>
-                </div>
-                <div class="row uniform">
-                    <div class="6u 12u(narrower)">
-                        <section class="box special">
-                            <i class="icon major fa-user"></i>
-                            <h3>Code Cleanup</h3>
-                            <p>Updated and cleaned up Umbraco core codebase</p>
-                        </section>
-                    </div>
-                    <div class="6u 12u(narrower)">
-                        <section class="box special">
-                            <i class="icon major fa-tint"></i>
-                            <h3>Content Apps</h3>
-                            <p>Turbo charged back-office extensibility</p>
-                        </section>
-                    </div>
-                </div>
-            </section>
-        </div>
+        @Html.Partial("~/Views/Partials/Features.cshtml")
         <!-- Two -->
         <div class="wrapper style2">
             <section class="container 75%">

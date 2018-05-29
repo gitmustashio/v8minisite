@@ -500,6 +500,7 @@
     <Content Include="Views\Partials\SectionHeader.cshtml" />
     <Content Include="Views\Master.cshtml" />
     <Content Include="raptor-sound.ogg" />
+    <Content Include="Views\Partials\Features.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

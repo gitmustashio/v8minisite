@@ -7,13 +7,13 @@
 
 <section id="banner">
     @*@if (Model.SiteLogo != null && !string.IsNullOrEmpty(Model.SiteLogo.Url))
-        {
-            <img src="@Model.SiteLogo.GetCropUrl("Logo")" alt="@Model.SiteName">
-        }
-        else
-        {
-            <a title="@Model.SiteName" href="/">@Model.SiteName</a>
-        }*@
+    {
+        <img src="@Model.SiteLogo.GetCropUrl("Logo")" alt="@Model.SiteName">
+    }
+    else
+    {
+        <a title="@Model.SiteName" href="/">@Model.SiteName</a>
+    }*@
     <img src="/images/preslogo.png?anchor=center&amp;mode=crop&amp;width=200&amp;height=227&amp;rnd=131713710430000000" alt="Umbraco Version 8">
     <h2>@Model.SiteName</h2>
     <p>@Model.SiteDescription</p>
