@@ -17,7 +17,7 @@
             </p>
         </header>
         <div class="row uniform">
-            @foreach (var feature in features.Children.Take(3))
+            @foreach (var feature in features?.Children?.Take(3))
             {
                 var featureTyped = feature as FeatureItem;
                 <div class="4u 12u(narrower)">
@@ -30,7 +30,7 @@
             }
         </div>
         <div class="row uniform">
-            @foreach (var feature in features.Children.Skip(3).Take(3))
+            @foreach (var feature in features?.Children?.Skip(3)?.Take(3))
             {
                 var featureTyped = feature as FeatureItem;
                 <div class="6u 12u(narrower)">
