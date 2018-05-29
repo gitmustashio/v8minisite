@@ -1,0 +1,44 @@
+﻿@using ContentModels = Umbraco.Web.PublishedModels;
+@inherits UmbracoViewPage<IPublishedContent>
+
+@{
+    var siteRoot = Model.Root() as ContentModels.Site;
+    var faqs = siteRoot.FaqsRepository as ContentModels.FaqList;
+}
+
+<div class="wrapper style2">
+    <section class="container 75%">
+        <header class="major">
+            <h2>@faqs.Name</h2>
+            <p>
+                @faqs.Summary
+            </p>
+        </header>
+        <div class="row uniform">
+            @foreach (var faq in faqs?.Children?.Take(2))
+            {
+                var faqTyped = faq as FaqItem;
+                <div class="6u 12u(narrower)">
+                    <section class="box special">
+                        <i class="icon major alt @faqTyped.FaqIcon"></i>
+                        <h3>@faqTyped.Name</h3>
+                        <p>@faqTyped.FaqDescription</p>
+                    </section>
+                </div>
+            }
+        </div>
+        <div class="row uniform">
+            @foreach (var faq in faqs?.Children?.Skip(2)?.Take(3))
+            {
+                var faqTyped = faq as FaqItem;
+                <div class="6u 12u(narrower)">
+                    <section class="box special">
+                        <i class="icon major alt @faqTyped.FaqIcon"></i>
+                        <h3>@faqTyped.Name</h3>
+                        <p>@faqTyped.FaqDescription</p>
+                    </section>
+                </div>
+            }
+        </div>
+    </section>
+</div>
